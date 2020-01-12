@@ -21,9 +21,10 @@ $(document).ready(function() {
     }).then(function(response) {
         $(getCity).text(response.name);
         $(getDate).text(moment().format('MMMM Do YYYY, h:mm a'));
+        $(getIcon).attr("src", "https://openweathermap.org/img/wn/" + response.weather[0].icon + "@2x.png");
         $(getTemp).text("Temp: " + response.main.temp + "F");
         $(getHumidity).text("Humidity: " + response.main.humidity + "%");
-        $(getWind).text("Wind: " + response.wind.speed + " MPH");
+        $(getWind).text("Wind: " + response.wind.speed + "MPH");
        });
     });
 });
